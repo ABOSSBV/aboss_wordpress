@@ -1,0 +1,3 @@
+<?php
+  # fear the silence
+ ?>
