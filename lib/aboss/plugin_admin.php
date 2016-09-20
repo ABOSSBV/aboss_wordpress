@@ -46,4 +46,13 @@ class PluginAdmin {
   public function eg_setting_section_callback_function() {
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'aboss/partials/admin-settings.php';
   }
+
+  public function enqueue_styles() {
+    wp_enqueue_style('aboss-events', plugin_dir_url( __FILE__ ) . '../../css/aboss-events-admin.css', array(), $this->pluginVersion, 'all' );
+  }
+
+  public function enqueue_scripts() {
+    wp_enqueue_script('aboss-events', plugin_dir_url( __FILE__ ) . '../../js/aboss-events-admin.js' );
+
+  }
 }

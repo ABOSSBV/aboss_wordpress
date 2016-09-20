@@ -33,14 +33,16 @@ class EventsPlugin {
     $this->loader->add_action('admin_menu', $pluginAdmin, 'add_admin_menu');
     $this->loader->add_action('widgets_init', $pluginAdmin, 'register_widgets');
     $this->loader->add_action('admin_init', $pluginAdmin, 'settings_api_init' );
+    $this->loader->add_action( 'admin_enqueue_scripts', $pluginAdmin, 'enqueue_styles' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $pluginAdmin, 'enqueue_scripts' );
 
   }
 
   private function definePublicHooks() {
     $pluginPublic = new PluginPublic($this->getPluginName(), $this->getPluginVersion());
 
-    // $this->loader->add_action('wp_enqueue_scripts', $pluginPublic, 'enqueue_styles' );
-		// $this->loader->add_action('wp_enqueue_scripts', $pluginPublic, 'enqueue_scripts' );
+    $this->loader->add_action( 'wp_enqueue_scripts', $pluginPublic, 'enqueue_styles' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $pluginPublic, 'enqueue_scripts' );
   }
 
   public function run() {

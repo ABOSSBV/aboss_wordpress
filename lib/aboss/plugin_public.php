@@ -9,5 +9,14 @@ class PluginPublic {
   public function Run() {
 
   }
+
+  public function enqueue_styles() {
+    wp_enqueue_style('aboss-events', plugin_dir_url( __FILE__ ) . '../../css/aboss-events.css', array(), $this->pluginVersion, 'all' );
+  }
+
+  public function enqueue_scripts() {
+    wp_enqueue_script('aboss-events', plugin_dir_url( __FILE__ ) . '../../js/aboss-events.js' );
+  }
+
 }
 ?>
