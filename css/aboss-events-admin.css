@@ -1,22 +1,43 @@
+.plugin__title {
+  padding: 0px 20px;
+}
+
 .plugin__container {
   display: flex;
   flex-direction: row;
 }
 
-.plugin__form, .plugin__account, .plugin__projects {
-  width: 500px;
+.plugin__form, .plugin__projects {
+  width: 400px;
   min-width: 300px;
-  padding: 20px;
+  padding: 0px 20px;
+  overflow: hidden;
 }
 
-.plugin__form input, .plugin__form select {
-  width: 300px;
+.plugin__account {
+  width: 350px;
+  min-width: 300px;
+  padding: 0px 20px;
+}
+
+.plugin__form input, .plugin__form select, .plugin__form textarea {
+  width: 280px;
   padding: 7px;
   border-radius: 5px;
+
+}
+
+.plugin__account li, .plugin__project li {
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .plugin__form input[type="submit"] {
   margin-left: 110px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 280px;
 }
 
 .form__row {
@@ -35,6 +56,7 @@
   border-right: 1px solid #DADADA;
 }
 
-.plugin__account li {
-
+.plugin__projects li {
+  list-style-type: disc;
+  margin-left: 20px;
 }

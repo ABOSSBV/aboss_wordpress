@@ -22,8 +22,7 @@ $account = new ABOSS\Account($apiKey);
   <div class="plugin__account">
     <h2>Connected account</h2>
     <ul>
-      <li><?php echo $account->get('nameFirst'); ?> <?php echo $account->get('nameLast'); ?></li>
-      <li><a href="mailto:<?php echo $account->get('email'); ?>"><?php echo $account->get('email'); ?></a></li>
+      <li><?php echo $account->get('nameFirst'); ?> <?php echo $account->get('nameLast'); ?> - <a href="mailto:<?php echo $account->get('email'); ?>"><?php echo $account->get('email'); ?></a></li>
     </ul>
   </div>
 
