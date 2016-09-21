@@ -33,7 +33,7 @@ class PluginAdmin {
   public function settings_api_init() {
     add_settings_section(
     	'aboss-events-basics',
-    	'Settings for the ABOSS API',
+    	'',
     	array($this, 'eg_setting_section_callback_function'),
     	'aboss-events'
     );

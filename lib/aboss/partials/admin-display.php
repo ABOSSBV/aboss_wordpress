@@ -6,26 +6,36 @@ $projects = new ABOSS\Projects($apiKey, $system, $agencyId);
 $account = new ABOSS\Account($apiKey);
 
 ?>
-<div class="wrap">
-  <h2>ABOSS Events</h2>
+<div class="plugin__title"><h1>ABOSS Events</h1></div>
 
-  <?php screen_icon(); ?>
+<div class="plugin__container">
+  <div class="plugin__form">
+    <h2>Configuration</h2>
+    <?php screen_icon(); ?>
+    <form method="post" action="options.php">
+    <?php settings_fields('aboss-events'); ?>
+    <?php do_settings_sections('aboss-events'); ?>
+    <?php submit_button('Save Changes'); ?>
+    </form>
+  </div>
 
-  <form method="post" action="options.php">
-  <?php settings_fields('aboss-events'); ?>
-  <?php do_settings_sections('aboss-events'); ?>
-  <?php submit_button('Save Changes'); ?>
-  </form>
-  <h2>Connected account</h2>
-  <ul>
-    <li><?php echo $account->get('nameFirst'); ?> <?php echo $account->get('nameLast'); ?></li>
-    <li><a href="mailto:<?php echo $account->get('email'); ?>"><?php echo $account->get('email'); ?></a></li>
-  </ul>
-  <h2>Projects connected to this account</h2>
-  <ul>
-  <?php foreach($projects->get() as $project) {
-    ?>
-    <li><?php echo $project->get('title'); ?></li>
-    <?
-  }?>
+  <div class="plugin__account">
+    <h2>Connected account</h2>
+    <ul>
+      <li><?php echo $account->get('nameFirst'); ?> <?php echo $account->get('nameLast'); ?></li>
+      <li><a href="mailto:<?php echo $account->get('email'); ?>"><?php echo $account->get('email'); ?></a></li>
+    </ul>
+  </div>
+
+  <div class="plugin__projects">
+    <h2>Projects</h2>
+    <ul>
+    <?php foreach($projects->get() as $project) {
+      ?>
+      <li><?php echo $project->get('title'); ?></li>
+      <?
+    }?>
+    </ul>
+  </div>
+
 </div>

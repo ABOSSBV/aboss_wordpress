@@ -1,0 +1,40 @@
+.plugin__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.plugin__form, .plugin__account, .plugin__projects {
+  width: 500px;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.plugin__form input, .plugin__form select {
+  width: 300px;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.plugin__form input[type="submit"] {
+  margin-left: 110px;
+}
+
+.form__row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.form__row label {
+  width: 100px;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+.plugin__account {
+  border-left: 1px solid #DADADA;
+  border-right: 1px solid #DADADA;
+}
+
+.plugin__account li {
+
+}
