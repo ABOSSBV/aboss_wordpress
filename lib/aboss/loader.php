@@ -8,6 +8,7 @@ class Loader {
   public function __construct() {
     $this->actions = [];
     $this->filters = [];
+    $this->shortcodes = [];
   }
 
   public function add_action( $hook, $component, $callback, $priority = 10, $accepted_args = 1) {
@@ -29,7 +30,7 @@ class Loader {
 
     return $hooks;
 	}
-  
+
   public function run() {
     foreach ($this->filters as $hook ) {
       add_filter( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
