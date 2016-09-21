@@ -6,17 +6,11 @@ $agencyId = get_option('aboss_events-agency-id');
 $projectId = $instance['project_id'];
 
 $events = new \ABOSS\Events($apiKey, $projectId, $agencyId);
-$date_format = ( !empty($instance) ? strip_tags($instance['date_format']) : '' );
-if (empty($date_format)) {
-  $date_format = 'd M Y';
-}
-
 ?>
 <section id="meta-aboss" class="widget aboss-events-widget"><h2 class="widget-title"><?php echo $instance['title'] ?></h2>
 
   <ul>
     <?php foreach($events->get() as $event) { ?>
-      <?php $start = new DateTime($event->get('start')); ?>
       <li class="aboss-event aboss-event-status-<?php echo $event->get('status'); ?>">
         <span class="aboss-event-title">
           <?php if ($instance['display_ticket_links'] && $instance['display_ticket_links'] == 'yes') {?>
@@ -27,7 +21,11 @@ if (empty($date_format)) {
         </span>
 
         <time class="aboss-event-time-start">
-          <?php echo $start->format($date_format); ?>
+          <?php echo $event->get('start'); ?>
+        </time>
+
+        <time class="aboss-event-time-end">
+          <?php echo $event->get('end'); ?>
         </time>
 
       </li>

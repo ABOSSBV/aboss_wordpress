@@ -13,6 +13,11 @@ class PluginTemplates {
    */
   public function displayEventWidget($attrs) {
     $widget = new EventsWidget();
+
+    if (!$attrs['project_id']) {
+      return '';
+    }
+
     return $widget->widget([], $attrs);
   }
 }

@@ -36,7 +36,7 @@ class EventsWidget extends \WP_Widget {
     $instance['title'] = strip_tags($new_instance['title']);
     $instance['amount_of_shows'] = intval($new_instance['amount_of_shows']);
     $instance['display_ticket_links'] = strip_tags($new_instance['display_ticket_links']);
-    $instance['date_formatting'] = strip_tags($new_instance['date_formatting']);
+    $instance['date_format'] = strip_tags($new_instance['date_format']);
     $instance['template'] = strip_tags($new_instance['template']);
     return $instance;
   }

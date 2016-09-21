@@ -8,6 +8,10 @@ $title = ( !empty($instance) ? strip_tags($instance['title']) : '' );
 $amount_of_shows = ( !empty($instance) ? strip_tags($instance['amount_of_shows']) : '' );
 $display_ticket_links = ( !empty($instance) ? strip_tags($instance['display_ticket_links']) : '' );
 $template_file = ( !empty($instance) ? strip_tags($instance['template']) : '' );
+$date_format = ( !empty($instance) ? strip_tags($instance['date_format']) : '' );
+if (empty($date_format)) {
+  $date_format = 'd M Y';
+}
 
 $projectList = new \ABOSS\Projects($apiKey, $system, $agencyId);
 
@@ -32,6 +36,11 @@ $projectList = new \ABOSS\Projects($apiKey, $system, $agencyId);
       <?php } ?>
     </select>
   </p>
+  <p>
+    <label for="<?php echo $this->get_field_id('date_format'); ?>">Date format (as in <a href="http://php.net/manual/en/function.date.php">PHP date function</a>)</label>
+    <input class="widefat" id="<?php echo $this->get_field_id('date_format'); ?>" name="<?php echo $this->get_field_name('date_format'); ?>" type="text" value="<?php echo esc_attr($date_format); ?>" />
+  </p>
+
   <p>
     <label for="<?php echo $this->get_field_id('display_ticket_links'); ?>">
       <input type="checkbox" id="<?php echo $this->get_field_id('display_ticket_links'); ?>" name="<?php echo $this->get_field_name('display_ticket_links'); ?>" type="text" value="yes" <?php if ($display_ticket_links == 'yes') {echo " checked"; } ?>/>
