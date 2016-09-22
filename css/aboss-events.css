@@ -1,34 +1,13 @@
-.aboss-event-status-confirmed a:hover, .aboss-event-status-confirmed .aboss-event-title:before{
-  color: #5BD185;
-  padding-right: 5px;
+.aboss-events-widget-wide table td, .aboss-events-widget-small table td{
+  border: none;
 }
 
-.aboss-event-status-option a:hover, .aboss-event-status-option .aboss-event-title:before{
-  color: #F4A712;
-  padding-right: 5px;
+.aboss-events-widget-wide table, .aboss-events-widget-small table {
+  border: none;
+  border-collapse: collapse;
+  margin: 0!important;
 }
 
-.aboss-events-widget-small .aboss-event-title:before {
-  content: '\2022  ';
-  font-size: 24px;
-}
-
-
-.aboss-events-widget-small .aboss-event {
-  list-style-type: none;
-}
-
-.aboss-events-widget-small .aboss-event-list {
-  margin: 0;
-  overflow: hidden;
-}
-
-.aboss-events-widget-small .aboss-event-title {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-}
-
-.aboss-events-widget-small time {
-  margin-left: 14px;
+.aboss-events-widget-wide table td:first-child {
+  padding-left: 0;
 }

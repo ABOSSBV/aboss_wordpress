@@ -12,7 +12,7 @@ if (empty($date_format)) {
 }
 
 ?>
-<section id="meta-aboss" class="widget aboss-events-widget-small ">
+<section id="meta-aboss" class="widget aboss-events-widget-small">
 
   <h2 class="widget-title"><?php echo $instance['title'] ?></h2>
 
@@ -26,7 +26,7 @@ if (empty($date_format)) {
           <?php } else { ?>
             <?php echo $event->get('title'); ?>
           <?php } ?>
-        </span>
+        - </span>
 
         <span>
           <time class="aboss-event-time-start">
