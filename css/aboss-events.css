@@ -1,3 +1,34 @@
-input {
-  width: 300px;
+.aboss-event-status-confirmed a:hover, .aboss-event-status-confirmed .aboss-event-title:before{
+  color: #5BD185;
+  padding-right: 5px;
+}
+
+.aboss-event-status-option a:hover, .aboss-event-status-option .aboss-event-title:before{
+  color: #F4A712;
+  padding-right: 5px;
+}
+
+.aboss-events-widget-small .aboss-event-title:before {
+  content: '\2022  ';
+  font-size: 24px;
+}
+
+
+.aboss-events-widget-small .aboss-event {
+  list-style-type: none;
+}
+
+.aboss-events-widget-small .aboss-event-list {
+  margin: 0;
+  overflow: hidden;
+}
+
+.aboss-events-widget-small .aboss-event-title {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.aboss-events-widget-small time {
+  margin-left: 14px;
 }

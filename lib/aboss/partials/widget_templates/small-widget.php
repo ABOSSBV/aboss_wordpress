@@ -12,9 +12,11 @@ if (empty($date_format)) {
 }
 
 ?>
-<section id="meta-aboss" class="widget aboss-events-widget"><h2 class="widget-title"><?php echo $instance['title'] ?></h2>
+<section id="meta-aboss" class="widget aboss-events-widget-small ">
 
-  <ul>
+  <h2 class="widget-title"><?php echo $instance['title'] ?></h2>
+
+  <ul class="aboss-event-list">
     <?php foreach($events->get() as $event) { ?>
       <?php $start = new DateTime($event->get('start')); ?>
       <li class="aboss-event aboss-event-status-<?php echo $event->get('status'); ?>">
@@ -26,10 +28,11 @@ if (empty($date_format)) {
           <?php } ?>
         </span>
 
-        <time class="aboss-event-time-start">
-          <?php echo $start->format($date_format); ?>
-        </time>
-
+        <span>
+          <time class="aboss-event-time-start">
+            <?php echo $start->format($date_format); ?>
+          </time>
+        </span>
       </li>
     <?php } ?>
   </ul>

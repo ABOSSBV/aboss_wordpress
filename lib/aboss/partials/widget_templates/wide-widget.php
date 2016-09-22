@@ -7,9 +7,9 @@ $projectId = $instance['project_id'];
 
 $events = new \ABOSS\Events($apiKey, $projectId, $agencyId);
 ?>
-<section id="meta-aboss" class="widget aboss-events-widget"><h2 class="widget-title"><?php echo $instance['title'] ?></h2>
+<section id="meta-aboss" class="widget aboss-events-widget-wide"><h2 class="widget-title"><?php echo $instance['title'] ?></h2>
 
-  <ul>
+  <ul class="aboss-event-list">
     <?php foreach($events->get() as $event) { ?>
       <li class="aboss-event aboss-event-status-<?php echo $event->get('status'); ?>">
         <span class="aboss-event-title">
