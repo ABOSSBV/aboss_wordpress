@@ -9,7 +9,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       ABOSS Events
- * Plugin URI:        http://a-boss.net/wordpress
+ * Plugin URI:        http://integrations.a-boss.net/wordpress
  * Description:       Display your ABOSS Events in Wordpress. Requires cURL to work.
  * Version:           1.0.0
  * Author:            ABOSS B.V.
