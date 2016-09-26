@@ -1,14 +1,17 @@
-=== ABOSS Events ===
+ABOSS Events
+===
 Contributors: ABOSS B.V.
 
-== Description ==
+Description
+===
 ABOSS is a booking and management tool for the entertainment industry. This plugin
 easily allows you to display upcoming shows
 
-== Short tag usage ==
+Short tag usage
+===
 You can use a short tag (aboss-events) within a page. For instance
 
-[aboss-events project_id="10" title="Project Met ID 10" display_ticket_links="yes"]
+    [aboss-events project_id="10" title="Project Met ID 10" display_ticket_links="yes"]
 
 - project_id
 - title
