@@ -21,7 +21,7 @@ if (empty($date_format)) {
       <?php $start = new DateTime($event->get('start')); ?>
       <li class="aboss-event aboss-event-status-<?php echo $event->get('status'); ?>">
         <span class="aboss-event-title">
-          <?php if ($instance['display_ticket_links'] && $instance['display_ticket_links'] == 'yes') {?>
+          <?php if ($instance['display_ticket_links'] && $instance['display_ticket_links'] == 'yes' && $event->get('ticketLink')) {?>
             <a href="<?php echo $event->get('ticketLink') ?>"><?php echo $event->get('title'); ?></a>
           <?php } else { ?>
             <?php echo $event->get('title'); ?>
