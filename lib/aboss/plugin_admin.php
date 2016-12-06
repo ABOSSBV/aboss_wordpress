@@ -7,7 +7,7 @@ class PluginAdmin {
   protected $pluginVersion;
 
   public function __construct($pluginName, $pluginVersion) {
-    $this->$pluginName = $plugin_name;
+    $this->$pluginName = $pluginName;
     $this->$pluginVersion = $version;
   }
 
