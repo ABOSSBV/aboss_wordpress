@@ -8,7 +8,7 @@ class PluginAdmin {
 
   public function __construct($pluginName, $pluginVersion) {
     $this->$pluginName = $pluginName;
-    $this->$pluginVersion = $version;
+    $this->$pluginVersion = $pluginVersion;
   }
 
   public function add_admin_menu() {

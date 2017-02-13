@@ -7,7 +7,7 @@ $projectId = $instance['project_id'];
 
 $events = new \ABOSS\Events($apiKey, $projectId, $agencyId);
 $date_format = ( !empty($instance) ? strip_tags($instance['date_format']) : '' );
-if (empty($date_format)) {
+if (!$date_format || empty($date_format)) {
   $date_format = 'd M Y';
 }
 
