@@ -32,7 +32,7 @@ $account = new ABOSS\Account($apiKey);
     <?php foreach($projects->get() as $project) {
       ?>
       <li><?php echo $project->get('title'); ?></li>
-      <?
+      <?php
     }?>
     </ul>
   </div>
