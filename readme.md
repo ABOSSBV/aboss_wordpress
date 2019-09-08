@@ -13,12 +13,16 @@ You can use a shortcode (aboss-events) within any wordpress page or post.
 To add the ABOSS events from a specific project to your page, use:
 
     [aboss-events project_id="10" title="Project 10" display_ticket_links="yes"]
+    
+To add ABOSS events from your all your agency projects (ABOSS Agency only), use:
+
+    [aboss-events title="All Artists" display_ticket_links="yes"]
 
 #### Attributes
 - project_id
   - The ID of the project from ABOSS you'd like to display
 - title
-  - Header text
+  - Text displayed on top
 - display_ticket_links
   - [yes/no] - Select yes to add a link to the event name with the ticketlink from ABOSS
 - date_format (Available in small-widget only)
