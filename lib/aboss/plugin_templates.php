@@ -14,7 +14,9 @@ class PluginTemplates {
   public function displayEventWidget($attrs) {
     $widget = new EventsWidget();
     
-    return $widget->widget([], $attrs);
+    ob_start();
+    $widget->widget([], $attrs);
+    return ob_get_clean();
   }
 }
 ?>
