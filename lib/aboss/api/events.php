@@ -42,9 +42,9 @@ class Events {
   }
 
   private function generateUrl($projectId, $agencyId) {
-    if ($agencyId) {
       $from       = date("Y-m-d");
       $to         = date('Y-m-d', strtotime(date("d-m-Y", time()) . " + 365 day"));
+    if ($agencyId) {
       if ($projectId) {
         $url = "https://data.a-boss.net/v1/agency/" . $agencyId . "/" . $projectId . "/public_events?from=" . $from . "&to=" . $to;
       } else {
