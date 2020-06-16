@@ -8,7 +8,7 @@ $projectId = $instance['project_id'];
 $events = new \ABOSS\Events($apiKey, $projectId, $agencyId);
 $date_format = ( !empty($instance) ? strip_tags($instance['date_format']) : '' );
 if (!$date_format || empty($date_format)) {
-  $date_format = 'd M Y';
+  $date_format = 'd/m/Y';
 }
 
 ?>
@@ -20,20 +20,28 @@ if (!$date_format || empty($date_format)) {
     <?php foreach($events->get() as $event) { ?>
       <?php $start = new DateTime($event->get('start')); ?>
       <li class="aboss-event aboss-event-status-<?php echo $event->get('status'); ?>">
+        <time class="aboss-event-time-start">
+          <?php echo $start->format($date_format); ?>
+        </time>
         <span class="aboss-event-title">
           <?php if ($instance['display_ticket_links'] && $instance['display_ticket_links'] == 'yes' && $event->get('ticketLink')) {?>
             <a href="<?php echo $event->get('ticketLink') ?>"><?php echo $event->get('title'); ?></a>
           <?php } else { ?>
             <?php echo $event->get('title'); ?>
           <?php } ?>
-        - </span>
-
-        <span>
-          <time class="aboss-event-time-start">
-            <?php echo $start->format($date_format); ?>
-          </time>
         </span>
       </li>
     <?php } ?>
   </ul>
 </section>
+
+<style>
+.aboss-event-list {
+  margin: 0;
+  padding: 0;
+}
+
+time {
+  margin-right: 10px;
+}
+</style>
