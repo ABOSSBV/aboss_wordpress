@@ -1,40 +1,64 @@
 # ABOSS Events
+
 This Wordpress plugin allows you to add your upcoming events from ABOSS agency
 or ABOSS Artist to your Wordpress through a Widget or Shortcode.
 
 ## Installation
+
 1. Install the ABOSS Events plugin by uploading the files to your Wordpress /wp-content/plugins/ folder
 2. Activate the plugin in your WordPress Admin
 3. Add your API Key that you can find in your personal ABOSS account (Profile Settings -> Authentication Token)
 4. Add a widget to your Wordpress website or use the Shortcode to add events to your Wordpress pages
 
 ## Shortcode
+
 You can use a shortcode (aboss-events) within any wordpress page or post.
 To add the ABOSS events from a specific project to your page, use:
 
     [aboss-events project_id="10" title="Project 10" display_ticket_links="yes"]
-    
+
 To add ABOSS events from your all your agency projects (ABOSS Agency only), use:
 
     [aboss-events title="All Artists" display_ticket_links="yes"]
 
 #### Attributes
+
 - project_id
-  - The ID of the project from ABOSS you'd like to display
-- title
-  - Text displayed on top
+  - The ID of the project from ABOSS you'd like to display. When no project ID is supplied, the widget will display events from all projects.
+- title (Available in small-widget)
+  - Text displayed on top.
 - display_ticket_links
   - [yes/no] - Select yes to add a link to the event name with the ticketlink from ABOSS
-- date_format (Available in small-widget only)
-  - Change the format of the date displayed. (Date format info: http://php.net/manual/en/function.date-format.php)
+- date_format (Available in small-widget and wide-widget)
+  - Change the format of the date displayed. (Date format info: https://www.php.net/manual/en/function.date.php)
+- time_format (Available in wide-widget)
+  - Change the format of the time displayed. (Time format info: https://www.php.net/manual/en/function.date.php)
 - template
-  - Build and select your own template by adding the filename from a file in the directory lib/aboss/partials/widget_templates
+
+  - Build and select your own template by adding the filename from a file in the directory lib/aboss/partials/widget_templates. We supply the following 3 templates:
+
+    - **small-widget**
+
+      `[aboss-events template="small-widget"]`
+      ![small-widget](https://aboss-assets.s3.eu-central-1.amazonaws.com/assets/wordpress/small-widget.png)
+
+    - **wide-widget**
+
+      `[aboss-events template="wide-widget"]`
+      ![wide-widget](https://aboss-assets.s3.eu-central-1.amazonaws.com/assets/wordpress/wide-widget.png)
+
+    - **calendar-view**
+
+      `[aboss-events template="calendar-view"]`
+      ![calendar-view](https://aboss-assets.s3.eu-central-1.amazonaws.com/assets/wordpress/calendar-view.png)
 
 #### Contributors
+
 Simon de la Court, Michael Abdulai, Thomas van Beek
 
 ## License
-    Copyright (c) 2016 ABOSS B.V.
+
+    Copyright (c) 2020 ABOSS B.V.
 
     Permission is hereby granted, free of charge, to any person
     obtaining a copy of this software and associated documentation
