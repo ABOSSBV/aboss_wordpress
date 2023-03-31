@@ -26,7 +26,7 @@ class PluginAdmin {
     register_widget('ABOSS\EventsWidget');
   }
 
-  public function admin_page($args) {
+  public static function admin_page($args) {
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'aboss/partials/admin-display.php';
   }
 
